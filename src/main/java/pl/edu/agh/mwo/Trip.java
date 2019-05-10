@@ -1,8 +1,11 @@
 package pl.edu.agh.mwo;
 
+import java.util.Set;
+
 public class Trip {
 	private String name;
 	private String description;
+        private Set<Photo> photos;
 	
 	public Trip(String name, String description) {
 		this.name = name;
@@ -24,4 +27,12 @@ public class Trip {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+        
+        public void addPhoto(Photo photo){
+            photos.add(photo);
+        }
+        
+        public Set<Photo> getPhotos(){
+            return photos;
+        }
 }
