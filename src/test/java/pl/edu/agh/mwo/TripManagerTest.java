@@ -70,6 +70,6 @@ public class TripManagerTest {
         Assert.assertEquals(1, tripManager.searchForTrip("").size());
         Assert.assertEquals(1, tripManager.searchForTrip("Tatry").size());
         Assert.assertEquals(1, tripManager.searchForTrip("W³óczykij").size());
-        Assert.assertEquals(1, tripManager.searchForTrip("zachodzie").size());
+        Assert.assertEquals(1, tripManager.searchForTrip("zachodzie").size()); 
     }
 }
