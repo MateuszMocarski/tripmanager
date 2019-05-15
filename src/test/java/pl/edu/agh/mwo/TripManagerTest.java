@@ -60,18 +60,16 @@ public class TripManagerTest {
         Assert.assertEquals(1, tripManager.getTrips().size());
         tripManager.remove(trip.getName());
         Assert.assertEquals(0, tripManager.getTrips().size());
-        fail("chcemy zespuc");
     }
 
     @Test
     public void searchForTripTest() throws TripAlreadyExistsException {
-
         trip.addPhoto(p);
         tripManager.add(trip); //we added only 1 trip to this manager, so there is 1 trip with 1 photo
 
         Assert.assertEquals(1, tripManager.searchForTrip("").size());
-        Assert.assertEquals(1, tripManager.searchForTrip("Tatry"));
-        Assert.assertEquals(1, tripManager.searchForTrip("W³óczykij"));
-        Assert.assertEquals(1, tripManager.searchForTrip("zachodzie"));
+        Assert.assertEquals(1, tripManager.searchForTrip("Tatry").size());
+        Assert.assertEquals(1, tripManager.searchForTrip("W³óczykij").size());
+        Assert.assertEquals(1, tripManager.searchForTrip("zachodzie").size());
     }
 }

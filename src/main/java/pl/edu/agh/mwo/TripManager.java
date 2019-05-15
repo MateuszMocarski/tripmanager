@@ -22,12 +22,12 @@ public class TripManager {
         return tripList;
     }
 
-    public List<Trip> searchForTrip(String searchKey) {
-        List<Trip> trips;
+    public Set<Trip> searchForTrip(String searchKey) {
+        Set<Trip> trips;
         if (searchKey.equals("")) {
-            trips = (List<Trip>) tripList.values();
+            trips = new HashSet<>(tripList.values());
         } else {
-            trips = new ArrayList<>();
+            trips = new HashSet<>();
             for (Trip trip : tripList.values()) {
 
                 if (trip.getName().contains(searchKey)) {
