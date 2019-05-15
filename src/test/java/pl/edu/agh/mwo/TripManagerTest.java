@@ -30,7 +30,11 @@ public class TripManagerTest {
     @Before
     public void setUp() throws TripAlreadyExistsException {
         trip = new Trip("Tatry 2019", "Wycieczka w Tatry organizowana przez biuro turystyczne 'W³óczykij'");
+        trip.setName("Tatry 2019");
+        trip.setDescription("Wycieczka w Tatry organizowana przez biuro turystyczne 'W³óczykij'");
+        
         p = new Photo("Tatry o zachodzie s³oñca");
+        p.setComment("Tatry o zachodzie s³oñca");
         tripManager = new TripManager();
 
     }
