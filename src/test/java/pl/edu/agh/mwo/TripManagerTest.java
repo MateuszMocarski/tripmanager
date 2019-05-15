@@ -1,5 +1,6 @@
 package pl.edu.agh.mwo;
 
+import java.util.NoSuchElementException;
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -59,7 +60,7 @@ public class TripManagerTest {
     }
 
     @Test
-    public void testRemoveTrip() throws Exception {
+    public void testRemoveTripByName() throws Exception {
         tripManager.add(trip);
         Assert.assertEquals(1, tripManager.getTrips().size());
         tripManager.remove(trip.getName());
@@ -75,5 +76,11 @@ public class TripManagerTest {
         Assert.assertEquals(1, tripManager.searchForTrip("Tatry").size());
         Assert.assertEquals(1, tripManager.searchForTrip("W³óczykij").size());
         Assert.assertEquals(1, tripManager.searchForTrip("zachodzie").size()); 
+    }
+    
+    @Test(expected = NoSuchElementException.class)
+    public void searchForTripInEmptyTripManagerExceptionCatch(){
+        tripManager.getTrips().clear();
+        tripManager.searchForTrip("");
     }
 }
